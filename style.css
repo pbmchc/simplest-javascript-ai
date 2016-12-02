@@ -1,0 +1,291 @@
+﻿body {
+    margin:0;
+    padding:0;
+    font-family: Consolas, sans-serif;
+    height:100vh;
+    background-color:gray;
+}
+
+h3{
+    margin: 5px 0px;
+    color: white;
+}
+
+#finalScreen{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    z-index: 20;
+    opacity: 0.8;
+    display:none;
+}
+
+#finalScreen > p{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -100%);
+    color: white;
+    font-size: 2em;
+}
+
+.scene{
+    height: 600px;
+    padding-top: 100px;
+    box-sizing: border-box;
+    background: radial-gradient(ellipse at right top, #1b2735 0%, #090a0f 100%);
+}
+
+.space{
+    width: 100%;
+    height: 400px;
+    position: relative;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    box-shadow: 0px 0px 15px white;
+    background: radial-gradient(ellipse at right top, #1b2735 0%, #090a0f 100%);
+
+}
+
+.spaceship{
+    position:absolute;
+    height: 50px;
+    width: 100px;
+    left:30px;
+    top:50px;
+    background-color: rgb(255,210,101);
+    border-radius: 5px 20px 20px 5px;
+}
+
+.spaceship:after{
+    content:'';
+    height: 30px;
+    width:12px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    background-color: lightblue;
+    border: 2px solid gray;
+    border-radius: 3px;
+    box-sizing: border-box;
+
+}
+
+.spaceship:before{
+    content:'';
+    height: 40px;
+    width:20px;
+    position: absolute;
+    left: -20px;
+    bottom: 5px;
+    background: linear-gradient(red 20%, yellow 50%, red);
+}
+
+.reflector{
+    position: absolute;
+    right:-500px;
+    height: 10px;
+    width:510px;
+    opacity:0.05;
+    background-color: yellow;
+    border-radius: 10px;
+}
+
+.topDeck{
+    width: 98px;
+    height:20px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(214,176,85);
+    box-sizing: border-box;
+}
+
+#hit{
+    background: radial-gradient(100px, red, transparent);
+    width: 200px;
+    height:200px;
+    position: absolute;
+    top:-75px;
+    left:-50px;
+    visibility: hidden;
+    opacity: 0.5;
+}
+.sensor{
+    position:relative;
+    background: white;
+    opacity:0.1;
+    text-align:center;
+    visibility:hidden;
+}
+
+#sensor1{
+    top:-50px;
+    left:50px;
+    width: 50px;
+    height: 50px;
+}
+
+#sensor2{
+    left:50px;
+    width: 50px;
+    height: 50px;
+}
+
+#sensor3{
+    left:100px;
+    top:-100px;
+    width: 500px;
+    height: 50px;
+}
+
+.obstacle{
+    position: absolute;
+    right:0;
+    top:0;
+    height: 70px;
+    width: 70px;
+    background-color: lightgrey;
+}
+
+.controlPanel{
+    background-color: #333;
+    padding-bottom: 20px;
+    border-top: 2px solid white;
+    padding-top: 20px;
+}
+
+.leftPanel{
+   width: 50%;
+   display: inline-block;
+   text-align:center;
+   padding-top: 10px;
+}
+
+.rightPanel{
+   width: 50%;
+   display: inline-block;
+   float:right;
+   text-align:center;
+}
+
+.leftPanel textarea{
+   resize:none; 
+   width: 100%;
+   margin-top:10px;
+   font-family: Consolas, sans-serif;
+   font-size: 0.8em;
+   text-align: center;
+   background-color: #f3f3f3;
+}
+
+.infoPanel{
+    width: 50%;
+    display: inline-block;
+    float:right;
+    padding: 0px 15px;
+}
+
+.meterPanel{
+    text-align:center;
+    width: 45%;
+    position: relative;
+}
+
+#successMeter{
+    position:absolute;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+.buttonPanel{
+    background-color:#333;
+    text-align:center;
+    padding: 30px 0px 30px 0px;
+}
+
+.button{
+    height: 40px;
+    width: 100px;
+    background: rgb(255,210,101);
+    color: white;
+    position: relative;
+    display:inline-block;
+    margin: 10px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 40px;
+}
+
+.button:before{
+  position: absolute;
+  height: 11px;
+  width: inherit;
+  background: rgb(199,164,79);
+  content: '';
+  bottom:-11px;
+  left: -6px;
+  transform: skew(-50deg);
+}
+
+.button:after{
+  position: absolute;
+  height: 41px;;
+  width: 12px;
+  background: rgb(214,176,85);
+  content: '';
+  left:-12px;
+  top: 5px;
+  transform: skew(0, -40deg)
+}
+
+.pressed{
+  top: 11px;
+  right:12px;
+}
+
+.pressed:after{
+  height: 40px;
+  width: 2px;
+  left:-2px;
+  top:1px;
+  transform: skew(0, -40deg);
+}
+
+.pressed:before{
+  height: 2px;
+  bottom:-2px;
+  left:-1px;
+  transform: skew(-50deg);
+}
+
+.observationTable{
+    background-color: #f3f3f3;
+    width:98%;
+    border-collapse: collapse;
+    margin-top:10px;
+    border-color: lightslategray;
+    border-bottom-color: transparent;
+}
+
+.observationTable td{
+    font-size: 0.8em;
+    text-align: center;
+    border-color: lightslategray;
+}
+
+.dataTable{
+    background-color: #f3f3f3;
+    width:98%;
+    font-size: 0.7em;
+    border-collapse: collapse;
+    border-color: lightslategray;
+}
+
+.dataTable td{
+    text-align: center;
+    border-color: transparent;
+}
